@@ -1,0 +1,26 @@
+.bar{
+    background: aliceblue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 2;
+    overflow: visible;
+    height: 30%;
+    user-select: none;
+}
+
+.bar:hover{
+    box-shadow: 1px 1px .2em black;
+    z-index: 5;
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}

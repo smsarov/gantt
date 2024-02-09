@@ -1,0 +1,88 @@
+.container{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    overflow-y: visible;
+    transform-origin: left;
+    transition: all .5s ease;
+    margin-top: 5%;
+}
+
+.chart, .dummy{
+    width: 80%;
+    height: 100%;
+    background: lightgrey;
+    margin: auto;
+    display: grid;
+    row-gap: 20px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    border-radius: 15px;
+
+}
+
+
+
+.dummy{
+    background: transparent;
+    position: absolute;
+    left: 10%;
+    top: 0px;
+    overflow-x: scroll;
+    pointer-events: auto;
+}
+
+.dummy::-webkit-scrollbar{
+    height: 0px;
+    width: 0px;
+}
+
+.dateDays{
+    cursor: pointer;
+    background: black;
+    color:aliceblue;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    
+}
+
+.dateWeeks{
+    cursor: pointer;
+    background: black;
+    color:aliceblue;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-left: 3%;
+    padding-right: 3%;
+    z-index: 2;
+}
+
+.dateDays:hover::after, .dateWeeks:hover::after{
+    content: '';
+    position: absolute;
+    height: 70vh;
+    background-color: grey;
+    width: 1px;
+    top: 0;
+    left: 0;
+    z-index: 30;
+}
+.dateDays:hover::before, .dateWeeks:hover::before{
+    content: '';
+    position: absolute;
+    height: 70vh;
+    background-color: grey;
+    width: 1px;
+    top: 0;
+    right: 0;
+    z-index: 30;
+}
