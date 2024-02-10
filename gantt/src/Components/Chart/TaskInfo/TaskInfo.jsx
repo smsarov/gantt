@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./taskinfo.module.css";
 
-import tasks from "/Users/smsarov/gantt/gantt/src/tasks.js";
+import tasks from './../../../tasks'
 
 function TaskInfo(props) {
   if (props.task == null)
@@ -14,7 +14,7 @@ function TaskInfo(props) {
     <div ref={props._ref} className={styles.info} onClick={() => props.close()}>
       <h1>{name}</h1>
       <p>
-        Description:
+        Description
         <h3>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
           excepturi iusto ab esse provident dignissimos ex, culpa voluptates
@@ -25,17 +25,23 @@ function TaskInfo(props) {
       <p>
         Start:
         <h3>
-          {from.getDate() +
-            "." +
-            (from.getMonth() + 1) +
-            "." +
-            from.getFullYear()}
+          {from.toLocaleDateString(undefined, {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
         </h3>
       </p>
       <p>
         Finish:
         <h3>
-          {to.getDate() + "." + (to.getMonth() + 1) + "." + to.getFullYear()}
+        {to.toLocaleDateString(undefined, {
+            weekday: "long",
+            year: 'numeric',
+            month: "long",
+            day: "numeric",
+          })}
         </h3>
       </p>
       <p>
@@ -45,14 +51,16 @@ function TaskInfo(props) {
             {task.deps.length
               ? task.deps.map((id) => {
                   return (
-                    <a onMouseOver={() => {
-                        const bar = document.getElementById('task_' + id);
-                        bar.style.boxShadow = '1px 1px .2em black';
-
-                    }} onMouseLeave={() => {
-                        const bar = document.getElementById('task_' + id);
-                        bar.style.boxShadow = '';
-                    }}>
+                    <a
+                      onMouseOver={() => {
+                        const bar = document.getElementById("task_" + id);
+                        bar.style.boxShadow = "1px 1px .2em black";
+                      }}
+                      onMouseLeave={() => {
+                        const bar = document.getElementById("task_" + id);
+                        bar.style.boxShadow = "";
+                      }}
+                    >
                       {tasks.find((e) => e.id == id).name}
                     </a>
                   );

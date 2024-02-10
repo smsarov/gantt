@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+Math.lerp = (n, start1, stop1, start2, stop2) => {
+  return (n - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

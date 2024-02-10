@@ -1,0 +1,49 @@
+.dateDays{
+    cursor: pointer;
+    background: black;
+    color:aliceblue;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    
+}
+
+.dateWeeks{
+    cursor: pointer;
+    background: black;
+    color:aliceblue;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-left: 3%;
+    padding-right: 3%;
+    z-index: 2;
+}
+
+.dateDays:hover::after, .dateWeeks:hover::after{
+    content: '';
+    position: absolute;
+    height: 70vh;
+    background-color: grey;
+    width: 1px;
+    top: 0;
+    left: 0;
+    z-index: 30;
+}
+.dateDays:hover::before, .dateWeeks:hover::before{
+    content: '';
+    position: absolute;
+    height: 70vh;
+    background-color: grey;
+    width: 1px;
+    top: 0;
+    right: 0;
+    z-index: 30;
+}
